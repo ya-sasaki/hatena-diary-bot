@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./../../../assets/css/combined.css">
+	<link rel="shortcut icon" href="./../../../favicon.ico" />
 	<script src="http://www.google.com/jsapi" type="text/javascript"></script>
 	<script type="text/javascript">
 		var path = './../../../';
@@ -233,7 +234,7 @@ echo $fieldset;</code></pre>
 					(even integers and floats) but with the typing observer those will be cast to their scalar type.
 				</p>
 
-				<p>In addition to the above the Typing observer also adds support for serialized & json fields. Both should
+				<p>In addition to the above the Typing observer also adds support for serialized &amp; json fields. Both should
 					be string type fields ("text" preferably) but will have their value encoded for saving (using
 					<kbd>serialize()</kbd> or <kbd>json_encode()</kbd>) and decoded when retrieving from the DB (using
 					<kbd>unserialize()</kbd> or <kbd>json_decode()</kbd>).</p>
@@ -338,7 +339,7 @@ protected static $_observers = array('Orm\\Observer_Slug' => array('before_inser
 
 		<footer>
 			<p>
-				&copy; FuelPHP Development Team 2010-2011 - <a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.
+				&copy; FuelPHP Development Team 2010-2012 - <a href="http://fuelphp.com">FuelPHP</a> is released under the MIT license.
 			</p>
 		</footer>
 	</div>

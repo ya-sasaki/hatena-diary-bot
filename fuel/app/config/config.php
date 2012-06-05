@@ -6,7 +6,7 @@
  * @version    1.0
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2011 Fuel Development Team
+ * @copyright  2010 - 2012 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
@@ -46,14 +46,18 @@ return array(
 	'profiling'  => false,
 
 	/**
-	 * Settings for Cache class
+	 * Default location for the file cache
+	 */
+	'cache_dir'       => APPPATH.'cache/',
+
+	/**
+	 * Setttings for the file finder cache (the Cache class has it's own config!)
 	 */
 	'caching'         => false,
-	'cache_dir'       => APPPATH.'cache/',
 	'cache_lifetime'  => 3600, // In Seconds
 
 	/**
-	 * Callback to use with ob_start(), set this to 'ob_gzhandler' for gzip encodign of output
+	 * Callback to use with ob_start(), set this to 'ob_gzhandler' for gzip encoding of output
 	 */
 	'ob_callback'  => null,
 
@@ -154,6 +158,27 @@ return array(
 		'secure'      => false,
 		// Only transmit cookies over HTTP, disabling Javascript access
 		'http_only'   => false,
+	),
+
+	/**
+	 * Validation settings.
+	 */
+	'validation' => array(
+		/**
+		 * Wether to fallback to global when a
+		 *value is not found in the input array.
+		 */
+		'global_input_fallback' => true,
+	),
+
+	/**
+	 * Routing settings.
+	 */
+	'routing' => array(
+		/**
+		 * Whether URI routing is case sensitive or not
+		 */
+		'case_sensitive' => true,
 	),
 
 	/**
