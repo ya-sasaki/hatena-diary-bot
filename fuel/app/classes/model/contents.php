@@ -12,18 +12,14 @@ class Model_Contents
         $contents_list = array();
         foreach ($key_list as $key) 
         {
-            $contents = json_decode(file_get_contents(
-                "http://k.hatena.ne.jp/keywordblog/".urlencode(trim($key))."?mode=json",
-                false,
-                stream_context_create(
-                    array('http' => 
-                    array(
-                        'method' => 'GET',
-                        'header' => 'User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)',
-                    )
-                )
-            )));
-            
+            $url = "http://k.hatena.ne.jp/keywordblog/".urlencode(trim($key))."?mode=json";
+            $curl = curl_init();
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:13.0) Gecko/20100101 Firefox/13.0.1');
+            $response = curl_exec($curl);
+            curl_close($curl);
+            $contents = json_decode($response); 
             foreach ($contents->entries as $entry) 
             {
                 $contents_list[$entry->path] = $entry;
