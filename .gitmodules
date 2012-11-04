@@ -1,3 +1,0 @@
-[submodule "fuel/packages/twitter"]
-	path = fuel/packages/twitter
-	url = git://github.com/digitales/fuel-twitter.git
