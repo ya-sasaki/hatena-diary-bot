@@ -5,7 +5,7 @@ class Controller_Bot extends Controller
     public function action_index()
     {
         $key = Input::get('key');
-        if ($_SERVER['CRON_BOT_KEY'] != $key) 
+        if (getenv('CRON_BOT_KEY')!= $key) 
         {
             echo "invalid bot execute access.";
             exit;

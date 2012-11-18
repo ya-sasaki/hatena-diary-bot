@@ -11,7 +11,7 @@ return array(
 		'twitter_consumer_secret'  => isset($_SERVER['HTTP_TWITTER_CONSUMER_SECRET']) ? $_SERVER['HTTP_TWITTER_CONSUMER_SECRET'] : null,
 	),
 	'production' => array(
-		'twitter_consumer_key'     => isset($_SERVER['TWITTER_CONSUMER_KEY']) ? $_SERVER['TWITTER_CONSUMER_KEY'] : null,
-		'twitter_consumer_secret'  => isset($_SERVER['TWITTER_CONSUMER_SECRET']) ? $_SERVER['TWITTER_CONSUMER_SECRET'] : null,
+		'twitter_consumer_key'     => getenv('TWITTER_CONSUMER_KEY'),
+		'twitter_consumer_secret'  => getenv('TWITTER_CONSUMER_SECRET'),
 	),
 );
